@@ -1,4 +1,9 @@
 import doryFoto from "../components/assets/Dory.png";
+import casadoFoto from "../components/assets/Casado.jpeg";
+import talibaFoto from "../components/assets/Taliba.png";
+import falazadaFoto from "../components/assets/Falazada.png";
+import choraoFoto from "../components/assets/Chorao.jpeg";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -81,7 +86,7 @@ const residents = [
     name: "Carlos",
     nickname: "Falazada",
     surname: "Roberto",
-    photo: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop",
+    photo: falazadaFoto,
     hierarchy: "Decano",
     hierarchyType: "veteran",
     course: "Engenharia de Produção",
@@ -94,7 +99,7 @@ const residents = [
     name: "Luccas",
     nickname: "Talibã",
     surname: "Carneiro",
-    photo: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
+    photo: talibaFoto,
     hierarchy: "Morador",
     hierarchyType: "resident",
     course: "Sistemas de Informação",
@@ -107,7 +112,7 @@ const residents = [
     name: "Thiago",
     nickname: "Casado",
     surname: "Ker",
-    photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
+    photo: casadoFoto,
     hierarchy: "Morador",
     hierarchyType: "resident",
     course: "Sistemas de Informação",
@@ -133,7 +138,7 @@ const residents = [
     name: "Davi",
     nickname: "Chorão",
     surname: "Zanotti",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+    photo: choraoFoto,
     hierarchy: "Bixo",
     hierarchyType: "bixete",
     course: "Sistemas de Informação",
@@ -180,7 +185,7 @@ const Home = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-light">
-              Tradição, Amizade e Excelência Acadêmica em Ouro Preto
+              Tradição, Amizade e Excelência Acadêmica em João Monlevade
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

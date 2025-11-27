@@ -2,7 +2,7 @@ import { MessageCircle, Instagram, Facebook, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const ContactSection = () => {
-  const phoneNumber = "5500000000000"; // Substituir pelo número real
+  const phoneNumber = "+5537999411393"; // Substituir pelo número real
   const message = "Fala Dory, fiquei interessado em morar na DuBodi, podemos conversar melhor?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
@@ -35,7 +35,7 @@ export const ContactSection = () => {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com/dubodi"
+              href="https://www.instagram.com/repubdubodi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-card p-8 rounded-xl border-2 border-border hover:border-[#E4405F] transition-all hover:shadow-lg group"
@@ -53,7 +53,7 @@ export const ContactSection = () => {
 
             {/* Facebook */}
             <a
-              href="https://facebook.com/dubodi"
+              href="https://www.facebook.com/repubdubodi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-card p-8 rounded-xl border-2 border-border hover:border-[#1877F2] transition-all hover:shadow-lg group"
@@ -78,16 +78,17 @@ export const ContactSection = () => {
                 <h3 className="text-xl font-bold">Localização</h3>
               </div>
               <p className="text-muted-foreground">
-                Ouro Preto - MG<br />
-                Próximo à UFOP
+                João Monlevade - MG<br />
+                Próximo a Pontos de Onibus, Supermercados e Farmácias
               </p>
             </div>
           </div>
 
+
           {/* Mapa */}
           <div className="rounded-xl overflow-hidden border-2 border-border shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3757.8461234567!2d-43.5037!3d-20.3858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIzJzA4LjkiUyA0M8KwMzAnMTMuMyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.6801088521443!2d-43.187005323799475!3d-19.811155981550755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa5a9d9b34aa493%3A0xb224a30a965e72a3!2sRep%C3%BAblica%20DuBodi!5e0!3m2!1spt-BR!2sbr!4v1764217173111!5m2!1spt-BR!2sbr"
               width="100%"
               height="400"
               style={{ border: 0 }}
