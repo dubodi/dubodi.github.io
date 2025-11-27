@@ -1,3 +1,4 @@
+import doryFoto from "../components/assets/Dory.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -17,12 +18,15 @@ import {
   X
 } from "lucide-react";
 
+
+
 // Importações de UI (Shadcn)
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { ContactSection } from "@/components/ContactSection"; // Mantenha seu componente se já existir
+
 
 // --- DADOS E MOCKS ---
 
@@ -92,7 +96,7 @@ const residents = [
     surname: "Carneiro",
     photo: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
     hierarchy: "Morador",
-    hierarchyType: "freshman",
+    hierarchyType: "resident",
     course: "Sistemas de Informação",
     period: "20.1",
     institution: "UFOP",
@@ -105,7 +109,7 @@ const residents = [
     surname: "Ker",
     photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
     hierarchy: "Morador",
-    hierarchyType: "freshman",
+    hierarchyType: "resident",
     course: "Sistemas de Informação",
     period: "23.2",
     institution: "UFOP",
@@ -116,9 +120,9 @@ const residents = [
     name: "Rafael",
     nickname: "Dory",
     surname: "Pereira",
-    photo: "./assets/Dory.png",
+    photo: doryFoto,
     hierarchy: "Morador",
-    hierarchyType: "freshman",
+    hierarchyType: "resident",
     course: "Sistemas de Informação",
     period: "24.2",
     institution: "UFOP",
@@ -131,7 +135,7 @@ const residents = [
     surname: "Zanotti",
     photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
     hierarchy: "Bixo",
-    hierarchyType: "resident",
+    hierarchyType: "bixete",
     course: "Sistemas de Informação",
     period: "24.1",
     institution: "UFOP",
@@ -150,7 +154,7 @@ const Home = () => {
     switch (type) {
       case "veteran":
         return "bg-yellow-500 text-black hover:bg-yellow-600"; // Ajuste para Tailwind padrão se suas variaveis dubodi-yellow falharem
-      case "freshman":
+      case "resident":
         return "bg-red-600 text-white hover:bg-red-700";
       default:
         return "bg-muted text-muted-foreground";
