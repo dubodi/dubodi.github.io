@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { 
-  ChevronDown, 
-  Users, 
-  Home as HomeIcon, 
-  Award, 
-  Bed, 
-  Wifi, 
-  BookOpen, 
-  Tv, 
-  Bath, 
-  MapPin, 
-  GraduationCap, 
-  Calendar, 
+import {
+  ChevronDown,
+  Users,
+  Home as HomeIcon,
+  Award,
+  Bed,
+  Wifi,
+  BookOpen,
+  Tv,
+  Bath,
+  MapPin,
+  GraduationCap,
+  Calendar,
   School,
-  X 
+  X
 } from "lucide-react";
 
 // Importações de UI (Shadcn)
@@ -74,68 +74,68 @@ const galleryImages = [
 const residents = [
   {
     id: 1,
-    name: "Rafael",
-    nickname: "Dory",
-    surname: "Pereira",
+    name: "Carlos",
+    nickname: "Falazada",
+    surname: "Roberto",
     photo: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop",
-    hierarchy: "Veterano",
+    hierarchy: "Decano",
     hierarchyType: "veteran",
-    course: "Sistemas de Informação",
-    period: "24.2",
+    course: "Engenharia de Produção",
+    period: "18.2",
     institution: "UFOP",
-    city: "Divinópolis",
+    city: "Coronel Fabriciano - MG",
   },
   {
     id: 2,
     name: "Lucas",
-    nickname: "Flash",
-    surname: "Silva",
+    nickname: "Talibã",
+    surname: "Carneiro",
     photo: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
-    hierarchy: "Veterano",
-    hierarchyType: "veteran",
-    course: "Eng. de Produção",
-    period: "23.1",
+    hierarchy: "Morador",
+    hierarchyType: "resident",
+    course: "Sistemas de Informação",
+    period: "20.1",
     institution: "UFOP",
-    city: "Belo Horizonte",
+    city: "Montes Claros - MG",
   },
   {
     id: 3,
-    name: "João",
-    nickname: "Goku",
-    surname: "Santos",
+    name: "Thiago",
+    nickname: "Casado",
+    surname: "Ker",
     photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
     hierarchy: "Morador",
     hierarchyType: "resident",
-    course: "Eng. Metalúrgica",
+    course: "Sistemas de Informação",
     period: "23.2",
     institution: "UFOP",
-    city: "Ipatinga",
+    city: "Manhumirim - MG",
   },
   {
     id: 4,
-    name: "Matheus",
-    nickname: "Link",
-    surname: "Costa",
+    name: "Rafael",
+    nickname: "Dory",
+    surname: "Pereira",
     photo: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop",
-    hierarchy: "Bixo",
-    hierarchyType: "freshman",
-    course: "Engenharia Civil",
-    period: "25.1",
+    hierarchy: "Morador",
+    hierarchyType: "resident",
+    course: "Sistemas de Informação",
+    period: "24.2",
     institution: "UFOP",
-    city: "São Paulo",
+    city: "Divinópolis - MG",
   },
   {
     id: 5,
-    name: "Pedro",
-    nickname: "Thor",
-    surname: "Alves",
+    name: "Davi",
+    nickname: "Chorão",
+    surname: "Zanotti",
     photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
     hierarchy: "Bixo",
     hierarchyType: "freshman",
-    course: "Arquitetura",
-    period: "25.1",
+    course: "Sistemas de Informação",
+    period: "24.1",
     institution: "UFOP",
-    city: "Ouro Preto",
+    city: "Ipatinga - MG",
   },
 ];
 
@@ -159,7 +159,7 @@ const Home = () => {
 
   return (
     <main className="min-h-screen">
-      
+
       {/* --- 1. HERO SECTION --- */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10 pt-20">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIzMSwgNzYsIDYwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
@@ -180,16 +180,16 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg font-semibold shadow-lg shadow-primary/20"
                 onClick={() => scrollToSection('about')}
               >
                 Conheça a Casa
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="text-lg font-semibold"
                 onClick={() => scrollToSection('residents')}
               >
@@ -211,7 +211,7 @@ const Home = () => {
       {/* --- 2. SOBRE (HISTÓRIA + ESTRUTURA) --- */}
       <section id="about" className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          
+
           {/* Parte da História */}
           <div className="max-w-4xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
@@ -225,7 +225,7 @@ const Home = () => {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   Nossa casa carrega em seu nome a essência da união: "Du" representa a dualidade, o equilíbrio entre os estudos e a vida social; "Bodi" remete ao bode, símbolo de persistência e determinação.
                 </p>
-                
+
                 {/* Ícones de Valores */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                   <div className="text-center p-6 bg-secondary/20 rounded-xl hover:bg-secondary/30 transition-colors">
@@ -294,8 +294,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {galleryImages.map((image) => (
-              <Card 
-                key={image.id} 
+              <Card
+                key={image.id}
                 className="overflow-hidden cursor-pointer group border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 onClick={() => setSelectedImage(image.url)}
               >
@@ -318,11 +318,11 @@ const Home = () => {
         {/* Modal da Galeria */}
         <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
           <DialogContent className="max-w-5xl p-0 bg-black/95 border-primary/20 overflow-hidden">
-             {/* Botão de fechar customizado caso o DialogClose não esteja visível */}
-             <DialogClose className="absolute right-4 top-4 z-50 rounded-full bg-black/50 p-2 text-white hover:bg-white/20">
-                <X className="h-6 w-6" />
-                <span className="sr-only">Fechar</span>
-              </DialogClose>
+            {/* Botão de fechar customizado caso o DialogClose não esteja visível */}
+            <DialogClose className="absolute right-4 top-4 z-50 rounded-full bg-black/50 p-2 text-white hover:bg-white/20">
+              <X className="h-6 w-6" />
+              <span className="sr-only">Fechar</span>
+            </DialogClose>
             {selectedImage && (
               <div className="relative flex items-center justify-center h-full w-full">
                 <img
@@ -350,8 +350,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
             {residents.map((resident) => (
-              <Card 
-                key={resident.id} 
+              <Card
+                key={resident.id}
                 className="overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group"
               >
                 <CardHeader className="p-0">
@@ -364,7 +364,7 @@ const Home = () => {
                     />
                   </div>
                   <div className="px-4 pt-4 pb-2">
-                    <Badge 
+                    <Badge
                       className={`w-full justify-center py-1.5 font-bold text-xs uppercase tracking-wide border-0 ${getHierarchyColor(resident.hierarchyType)}`}
                     >
                       {resident.hierarchy}
@@ -377,7 +377,7 @@ const Home = () => {
                       {resident.name} <span className="text-primary">"{resident.nickname}"</span> {resident.surname}
                     </h3>
                   </div>
-                  
+
                   <div className="space-y-2 text-sm text-muted-foreground">
                     <div className="flex items-start gap-2">
                       <GraduationCap className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
