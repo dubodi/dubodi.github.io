@@ -87,7 +87,7 @@ const residents = [
   },
   {
     id: 2,
-    name: "Lucas",
+    name: "Luccas",
     nickname: "Talibã",
     surname: "Carneiro",
     photo: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
@@ -116,7 +116,7 @@ const residents = [
     name: "Rafael",
     nickname: "Dory",
     surname: "Pereira",
-    photo: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop",
+    photo: "./assets/Dory.png",
     hierarchy: "Morador",
     hierarchyType: "freshman",
     course: "Sistemas de Informação",
