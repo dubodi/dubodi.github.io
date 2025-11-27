@@ -1,35 +1,176 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../components/ui/button";
-import { ChevronDown, Users, Home as HomeIcon, Award } from "lucide-react";
-//import logoDubodi from "@/assets/logo-dubodi.png";
-import { ContactSection } from "../components/ContactSection";
+import { 
+  ChevronDown, 
+  Users, 
+  Home as HomeIcon, 
+  Award, 
+  Bed, 
+  Wifi, 
+  BookOpen, 
+  Tv, 
+  Bath, 
+  MapPin, 
+  GraduationCap, 
+  Calendar, 
+  School,
+  X 
+} from "lucide-react";
+
+// Importações de UI (Shadcn)
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { ContactSection } from "@/components/ContactSection"; // Mantenha seu componente se já existir
+
+// --- DADOS E MOCKS ---
+
+// Dados da Estrutura (Antigo About.tsx)
+const features = [
+  {
+    icon: Bed,
+    title: "4 Quartos Espaçosos",
+    description: "2 suítes privativas com banheiro próprio para maior conforto e privacidade.",
+  },
+  {
+    icon: Bath,
+    title: "4 Banheiros",
+    description: "Total de 4 banheiros completos, garantindo comodidade para todos.",
+  },
+  {
+    icon: Wifi,
+    title: "Internet 700 MB",
+    description: "Fibra óptica de alta velocidade, ideal para estudos, EAD e entretenimento.",
+  },
+  {
+    icon: BookOpen,
+    title: "Ambiente de Estudos",
+    description: "Espaços silenciosos e organizados, perfeitos para focar nos estudos.",
+  },
+  {
+    icon: Tv,
+    title: "Serviços de Streaming",
+    description: "Acesso completo a todas as principais plataformas de streaming.",
+  },
+  {
+    icon: HomeIcon,
+    title: "Totalmente Mobiliada",
+    description: "Casa equipada com tudo que você precisa: móveis, eletrodomésticos e utensílios.",
+  },
+];
+
+// Dados da Galeria
+const galleryImages = [
+  { id: 1, url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", alt: "Sala de estar" },
+  { id: 2, url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop", alt: "Quarto Confortável" },
+  { id: 3, url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop", alt: "Cozinha Equipada" },
+  { id: 4, url: "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&h=600&fit=crop", alt: "Área de Estudos" },
+  { id: 5, url: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop", alt: "Fachada" },
+  { id: 6, url: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=600&fit=crop", alt: "Área de Convivência" },
+];
+
+// Dados dos Moradores
+const residents = [
+  {
+    id: 1,
+    name: "Rafael",
+    nickname: "Dory",
+    surname: "Pereira",
+    photo: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&fit=crop",
+    hierarchy: "Veterano",
+    hierarchyType: "veteran",
+    course: "Sistemas de Informação",
+    period: "24.2",
+    institution: "UFOP",
+    city: "Divinópolis",
+  },
+  {
+    id: 2,
+    name: "Lucas",
+    nickname: "Flash",
+    surname: "Silva",
+    photo: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=400&h=400&fit=crop",
+    hierarchy: "Veterano",
+    hierarchyType: "veteran",
+    course: "Eng. de Produção",
+    period: "23.1",
+    institution: "UFOP",
+    city: "Belo Horizonte",
+  },
+  {
+    id: 3,
+    name: "João",
+    nickname: "Goku",
+    surname: "Santos",
+    photo: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop",
+    hierarchy: "Morador",
+    hierarchyType: "resident",
+    course: "Eng. Metalúrgica",
+    period: "23.2",
+    institution: "UFOP",
+    city: "Ipatinga",
+  },
+  {
+    id: 4,
+    name: "Matheus",
+    nickname: "Link",
+    surname: "Costa",
+    photo: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop",
+    hierarchy: "Bixo",
+    hierarchyType: "freshman",
+    course: "Engenharia Civil",
+    period: "25.1",
+    institution: "UFOP",
+    city: "São Paulo",
+  },
+  {
+    id: 5,
+    name: "Pedro",
+    nickname: "Thor",
+    surname: "Alves",
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+    hierarchy: "Bixo",
+    hierarchyType: "freshman",
+    course: "Arquitetura",
+    period: "25.1",
+    institution: "UFOP",
+    city: "Ouro Preto",
+  },
+];
 
 const Home = () => {
-  const scrollToHistory = () => {
-    document.getElementById("history")?.scrollIntoView({ behavior: "smooth" });
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const getHierarchyColor = (type: string) => {
+    switch (type) {
+      case "veteran":
+        return "bg-yellow-500 text-black hover:bg-yellow-600"; // Ajuste para Tailwind padrão se suas variaveis dubodi-yellow falharem
+      case "freshman":
+        return "bg-red-600 text-white hover:bg-red-700";
+      default:
+        return "bg-muted text-muted-foreground";
+    }
   };
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10">
+    <main className="min-h-screen">
+      
+      {/* --- 1. HERO SECTION --- */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10 pt-20">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIzMSwgNzYsIDYwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
 
-        {/* Badge de Status de Vagas */}
-        <div className="absolute top-24 right-4 md:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-full shadow-lg font-bold animate-pulse">
+        {/* Badge de Status */}
+        <div className="absolute top-28 right-4 md:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-full shadow-lg font-bold animate-pulse z-20 border border-primary/20">
           🏠 Vagas Abertas 25.1
         </div>
 
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center animate-fade-in">
-            <div className="mb-8 flex justify-center">
-              {/* <img
-                src={logoDubodi}
-                alt="Logo República DuBodi"
-                className="w-48 h-48 md:w-64 md:h-64 drop-shadow-2xl animate-scale-in hover:scale-105 transition-transform"
-              /> */}
-            </div>
-
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
               República <span className="text-primary">DuBodi</span>
             </h1>
@@ -39,92 +180,234 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/about">
-                <Button size="lg" className="text-lg font-semibold">
-                  Conheça a Casa
-                </Button>
-              </Link>
-              <Link to="/residents">
-                <Button size="lg" variant="outline" className="text-lg font-semibold">
-                  Moradores
-                </Button>
-              </Link>
+              <Button 
+                size="lg" 
+                className="text-lg font-semibold shadow-lg shadow-primary/20"
+                onClick={() => scrollToSection('about')}
+              >
+                Conheça a Casa
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg font-semibold"
+                onClick={() => scrollToSection('residents')}
+              >
+                Moradores
+              </Button>
             </div>
           </div>
         </div>
 
         <button
-          onClick={scrollToHistory}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+          onClick={() => scrollToSection('about')}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce cursor-pointer"
           aria-label="Rolar para baixo"
         >
           <ChevronDown size={40} />
         </button>
       </section>
 
-      {/* Nossa História */}
-      <section id="history" className="py-20 bg-gradient-subtle">
+      {/* --- 2. SOBRE (HISTÓRIA + ESTRUTURA) --- */}
+      <section id="about" className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          
+          {/* Parte da História */}
+          <div className="max-w-4xl mx-auto mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
               Nossa <span className="text-primary">História</span>
             </h2>
-
-            <div className="bg-card p-8 md:p-12 rounded-2xl shadow-lg border-2 border-border">
-              <div className="prose prose-lg max-w-none">
+            <div className="bg-card p-8 md:p-12 rounded-2xl shadow-lg border-2 border-border/50">
+              <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Fundada no coração histórico de Ouro Preto, a República DuBodi nasceu do sonho
-                  compartilhado de estudantes que buscavam mais do que apenas um lugar para morar.
-                  Queríamos criar um verdadeiro lar, onde a tradição republicana se encontrasse com
-                  a modernidade e o acolhimento.
+                  Fundada no coração histórico de Ouro Preto, a República DuBodi nasceu do sonho compartilhado de estudantes que buscavam mais do que apenas um lugar para morar.
                 </p>
-
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Nossa casa carrega em seu nome a essência da união: "Du" representa a dualidade,
-                  o equilíbrio entre os estudos e a vida social; "Bodi" remete ao bode, símbolo de
-                  persistência e determinação, características que definem cada um de nossos
-                  moradores ao longo da jornada universitária.
+                  Nossa casa carrega em seu nome a essência da união: "Du" representa a dualidade, o equilíbrio entre os estudos e a vida social; "Bodi" remete ao bode, símbolo de persistência e determinação.
                 </p>
-
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  Ao longo dos anos, a DuBodi se tornou referência entre as repúblicas de Ouro
-                  Preto, sendo reconhecida não apenas pela excelência acadêmica de seus membros,
-                  mas também pelo ambiente acolhedor, pela organização impecável e pelo respeito às
-                  tradições republicanas que cultivamos com carinho.
-                </p>
-
+                
+                {/* Ícones de Valores */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                  <div className="text-center p-6 bg-primary/5 rounded-xl">
+                  <div className="text-center p-6 bg-secondary/20 rounded-xl hover:bg-secondary/30 transition-colors">
                     <Users className="w-12 h-12 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-xl mb-2">Fraternidade</h3>
-                    <p className="text-sm text-muted-foreground">
-                      União que vai além da graduação
-                    </p>
+                    <p className="text-sm text-muted-foreground">União que vai além da graduação</p>
                   </div>
-
-                  <div className="text-center p-6 bg-accent/10 rounded-xl">
+                  <div className="text-center p-6 bg-accent/10 rounded-xl hover:bg-accent/20 transition-colors">
                     <HomeIcon className="w-12 h-12 text-accent-foreground mx-auto mb-3" />
                     <h3 className="font-bold text-xl mb-2">Lar Acolhedor</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Conforto e estrutura de primeira
-                    </p>
+                    <p className="text-sm text-muted-foreground">Conforto e estrutura de primeira</p>
                   </div>
-
-                  <div className="text-center p-6 bg-primary/5 rounded-xl">
+                  <div className="text-center p-6 bg-secondary/20 rounded-xl hover:bg-secondary/30 transition-colors">
                     <Award className="w-12 h-12 text-primary mx-auto mb-3" />
                     <h3 className="font-bold text-xl mb-2">Tradição</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Valores que resistem ao tempo
-                    </p>
+                    <p className="text-sm text-muted-foreground">Valores que resistem ao tempo</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Parte da Estrutura (Features) */}
+          <div className="mt-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Estrutura <span className="text-primary">Premium</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Tudo que você precisa para uma experiência universitária completa
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-card p-8 rounded-2xl border-2 border-border hover:border-primary transition-all hover:shadow-xl hover:-translate-y-1 group"
+                >
+                  <div className="mb-6 inline-block">
+                    <div className="bg-primary/10 p-4 rounded-xl group-hover:bg-primary/20 transition-colors group-hover:scale-110 transform duration-300">
+                      <feature.icon className="w-10 h-10 text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <ContactSection />
+      {/* --- 3. GALERIA --- */}
+      <section id="gallery" className="py-24 bg-secondary/10 border-y border-border/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Galeria de <span className="text-primary">Fotos</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Conheça cada cantinho da nossa república
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {galleryImages.map((image) => (
+              <Card 
+                key={image.id} 
+                className="overflow-hidden cursor-pointer group border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                onClick={() => setSelectedImage(image.url)}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={image.url}
+                    alt={image.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                    <span className="text-white font-bold text-lg tracking-wide px-4 text-center">{image.alt}</span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Modal da Galeria */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-5xl p-0 bg-black/95 border-primary/20 overflow-hidden">
+             {/* Botão de fechar customizado caso o DialogClose não esteja visível */}
+             <DialogClose className="absolute right-4 top-4 z-50 rounded-full bg-black/50 p-2 text-white hover:bg-white/20">
+                <X className="h-6 w-6" />
+                <span className="sr-only">Fechar</span>
+              </DialogClose>
+            {selectedImage && (
+              <div className="relative flex items-center justify-center h-full w-full">
+                <img
+                  src={selectedImage}
+                  alt="Imagem ampliada"
+                  className="max-h-[85vh] w-auto object-contain rounded-lg"
+                />
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+      </section>
+
+      {/* --- 4. MORADORES --- */}
+      <section id="residents" className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Nossos <span className="text-primary">Moradores</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Conheça as pessoas que fazem da DuBodi um lar especial
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+            {residents.map((resident) => (
+              <Card 
+                key={resident.id} 
+                className="overflow-hidden border-2 hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group"
+              >
+                <CardHeader className="p-0">
+                  <div className="relative aspect-square overflow-hidden bg-muted">
+                    <img
+                      src={resident.photo}
+                      alt={`${resident.name} ${resident.surname}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="px-4 pt-4 pb-2">
+                    <Badge 
+                      className={`w-full justify-center py-1.5 font-bold text-xs uppercase tracking-wide border-0 ${getHierarchyColor(resident.hierarchyType)}`}
+                    >
+                      {resident.hierarchy}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-4 space-y-3">
+                  <div className="text-center">
+                    <h3 className="font-bold text-lg leading-tight">
+                      {resident.name} <span className="text-primary">"{resident.nickname}"</span> {resident.surname}
+                    </h3>
+                  </div>
+                  
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="flex items-start gap-2">
+                      <GraduationCap className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <span>{resident.course}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span>Período {resident.period}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <School className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span>{resident.institution}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span>{resident.city}</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- 5. CONTATO --- */}
+      <section id="contact" className="bg-gradient-to-t from-black to-background">
+        <ContactSection />
+      </section>
+
     </main>
   );
 };
