@@ -1,8 +1,8 @@
-//import logoDubodi from "@/assets/logo-dubodi.png";
+import logoDubodi from "./assets/logo_vetorizada.svg";
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
 
 export const Footer = () => {
-  const phoneNumber = "5500000000000"; // Substituir pelo número real
+  const phoneNumber = "+5537999411393"; // Substituir pelo número real
   const message = "Fala Dory, fiquei interessado em morar na DuBodi, podemos conversar melhor?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -10,11 +10,11 @@ export const Footer = () => {
     <footer className="bg-dubodi-black text-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center space-y-6">
-          {/* <img 
+          { <img 
             src={logoDubodi} 
             alt="Logo DuBodi" 
-            className="w-20 h-20 rounded-full border-2 border-dubodi-yellow"
-          /> */}
+            className="w-auto h-80 object-contain"
+          /> }
           <div>
             <h3 className="text-2xl font-bold mb-2">República DuBodi</h3>
             <p className="text-white/70">
@@ -34,7 +34,7 @@ export const Footer = () => {
               <MessageCircle size={24} />
             </a>
             <a
-              href="https://instagram.com/dubodi"
+              href="https://instagram.com/repubdubodi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 p-3 rounded-full hover:bg-[#E4405F] transition-colors hover:scale-110 transform"
@@ -43,7 +43,7 @@ export const Footer = () => {
               <Instagram size={24} />
             </a>
             <a
-              href="https://facebook.com/dubodi"
+              href="https://facebook.com/repubdubodi"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white/10 p-3 rounded-full hover:bg-[#1877F2] transition-colors hover:scale-110 transform"

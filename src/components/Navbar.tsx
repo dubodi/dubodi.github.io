@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
+import logoDuBodi from "./assets/image.svg";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,7 @@ export const Navbar = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border/40 z-50 shadow-sm transition-all duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           
           {/* LOGO */}
           <a 
@@ -69,12 +70,16 @@ export const Navbar = () => {
             onClick={(e) => scrollToSection(e, 'home')}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity group"
           >
-            {/* Se você tiver a imagem da logo descomente abaixo */}
-            {/* <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-full border border-primary/50" /> */}
-            <span className="text-2xl font-bold tracking-wider group-hover:text-primary transition-colors">
-              DU<span className="text-primary">BODI</span>
-            </span>
+            <img 
+              src={logoDuBodi} 
+              alt="Logo DuBodi" 
+              // h-16 aumenta a altura (64px)
+              // w-auto mantém a proporção correta (não estica)
+              // object-contain garante que a imagem inteira apareça sem cortes
+              className="h-60 md:h-60 w-44 md:w-44" 
+            />
           </a>
+          
 
           {/* NAVEGAÇÃO DESKTOP */}
           <nav className="hidden md:flex items-center gap-8">

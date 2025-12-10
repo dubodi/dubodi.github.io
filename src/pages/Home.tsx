@@ -175,13 +175,45 @@ const Home = () => {
 
         {/* Badge de Status */}
         <div className="absolute top-28 right-4 md:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-full shadow-lg font-bold animate-pulse z-20 border border-primary/20">
-          🏠 Vagas Abertas 25.1
+          🏠 Vagas Abertas 26.1
         </div>
 
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="text-center animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 tracking-tight">
-              República <span className="text-primary">DuBodi</span>
+              República
+              <span className="relative inline-block ml-3">
+                {/* 1. Camada Vermelha (A mais grossa, fica no fundo) */}
+                <span className="
+      absolute inset-0 -z-20
+      text-transparent
+      font-extrabold
+      [-webkit-text-stroke:18px_#D62828] md:[-webkit-text-stroke:18px_#D62828]
+      [paint-order:stroke_fill]
+    ">
+                  DuBodi
+                </span>
+
+                {/* 2. Camada Branca (Grossa, fica no meio) */}
+                <span className="
+      absolute inset-0 -z-10
+      text-transparent
+      font-extrabold
+      [-webkit-text-stroke:5px_white] md:[-webkit-text-stroke:7px_white]
+      [paint-order:stroke_fill]
+    ">
+                  DuBodi
+                </span>
+
+                {/* 3. Camada Preta (Fina/Normal, fica na frente) */}
+                <span className="
+      relative z-10
+      text-black
+      font-extrabold
+    ">
+                  DuBodi
+                </span>
+              </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-light">
@@ -229,10 +261,12 @@ const Home = () => {
             <div className="bg-card p-8 md:p-12 rounded-2xl shadow-lg border-2 border-border/50">
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Fundada no coração histórico de Ouro Preto, a República DuBodi nasceu do sonho compartilhado de estudantes que buscavam mais do que apenas um lugar para morar.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Nossa casa carrega em seu nome a essência da união: "Du" representa a dualidade, o equilíbrio entre os estudos e a vida social; "Bodi" remete ao bode, símbolo de persistência e determinação.
+                  Fundada em 18 de março de 2010, a República DuBodi nasceu da iniciativa de quatro estudantes visionários, inicialmente, o objetivo era acolher alunos que faziam parte da Ordem DeMolay, mas, com o passar dos anos, nossos horizontes se expandiram. Esse critério foi deixado de lado para acolher diversos alunos, prezando pela diversidade e pela integração.
+
+                  Ao longo de mais de uma década, construímos um legado de companheirismo, união, parceria e respeito. Para nós, viver em república vai muito além de dividir um teto; trata-se de pensar no coletivo, criar vínculos verdadeiros e interagir com todos da casa e com outras repúblicas .
+
+
+                  O nome e o símbolo do "Bode" representam a nossa identidade, marcada pela persistência e pelo compromisso com a república. Aqui, repudiamos o individualismo e a falta de responsabilidade , buscando sempre desenvolver a parte social e acadêmica de cada morador, fazendo a DuBodi alcançar novos lugares.
                 </p>
 
                 {/* Ícones de Valores */}
