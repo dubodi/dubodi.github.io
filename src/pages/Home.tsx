@@ -3,6 +3,21 @@ import casadoFoto from "../components/assets/Casado.jpeg";
 import talibaFoto from "../components/assets/Taliba.png";
 import falazadaFoto from "../components/assets/Falazada.png";
 import choraoFoto from "../components/assets/Chorao.jpeg";
+import QuartoDory from "../components/assets/fotoCasa/QuartoDory (1).jpeg";
+import QuartoDory1 from "../components/assets/fotoCasa/QuartoDory (2).jpeg";
+import QuartoDory3 from "../components/assets/fotoCasa/QuartoDory (3).jpeg";
+import Quartofalazada from "../components/assets/fotoCasa/QuartoFalazada.jpeg";
+import Quartocasado from "../components/assets/fotoCasa/QuartoCasado.jpeg";
+import BanheiroDory from "../components/assets/fotoCasa/BanheiroDory (1).jpeg";
+import BanheiroDory2 from "../components/assets/fotoCasa/BanheiroDory (2).jpeg";
+import Lavanderia from "../components/assets/fotoCasa/Lavanderia.jpeg";
+import AreaExterna from "../components/assets/fotoCasa/AreaExterna1.jpeg";
+import AreaExterna2 from "../components/assets/fotoCasa/AreaExterna2.png";
+import QuartoTaliba from "../components/assets/fotoCasa/QuartoTaliba.jpeg";
+import Sala from "../components/assets/fotoCasa/Sala (1).jpeg"; 
+import Sala1 from "../components/assets/fotoCasa/Sala (2).jpeg"; 
+import Sala2 from "../components/assets/fotoCasa/Sala (3).jpeg"; 
+
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -71,12 +86,23 @@ const features = [
 
 // Dados da Galeria
 const galleryImages = [
-  { id: 1, url: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop", alt: "Sala de estar" },
-  { id: 2, url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop", alt: "Quarto Confortável" },
-  { id: 3, url: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop", alt: "Cozinha Equipada" },
-  { id: 4, url: "https://images.unsplash.com/photo-1552581234-26160f608093?w=800&h=600&fit=crop", alt: "Área de Estudos" },
-  { id: 5, url: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop", alt: "Fachada" },
-  { id: 6, url: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&h=600&fit=crop", alt: "Área de Convivência" },
+  { id: 1, url: Sala, alt: "Sala de estar" },
+  { id: 2, url: Sala1, alt: "Sala de estar" },
+  { id: 3, url: Sala2, alt: "Sala de estar" },
+  { id: 4, url: "", alt: "Cozinha" },
+  { id: 5, url: QuartoDory, alt: "Suite 1" },
+  { id: 6, url: QuartoDory1, alt: "Suite 1" },
+  { id: 7, url: QuartoDory3, alt: "Suite 1" },
+  { id: 8, url: BanheiroDory, alt: "Banheiro Suite 1" },
+  { id: 9, url: BanheiroDory2, alt: "Banheiro Suite 1" },
+  { id: 10, url: QuartoTaliba, alt: "Suite 2" },
+  { id: 11, url: "", alt: "Banheiro Suite 2" },
+  { id: 12, url: Quartofalazada, alt: "Quarto 1" },
+  { id: 13, url: Quartocasado, alt: "Quarto 2" },
+  { id: 14, url: "", alt: "Fachada" },
+  { id: 15, url: Lavanderia, alt: "Lavanderia" },
+  { id: 16, url: AreaExterna, alt: "Área de externa" },
+  { id: 17, url: AreaExterna2, alt: "Área de externa 2" },
 ];
 
 // Dados dos Moradores
