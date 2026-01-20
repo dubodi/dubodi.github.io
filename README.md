@@ -1,73 +1,49 @@
-# Welcome to your Lovable project
+# 🐐 República DuBodi - Site Oficial
 
-## Project info
+Bem-vindo ao repositório do site oficial da **República DuBodi**, localizada em João Monlevade - MG. Este projeto tem como objetivo apresentar nossa história, estrutura, moradores e facilitar o contato com calouros e interessados.
 
-**URL**: https://lovable.dev/projects/7c8528eb-d52a-4353-978b-46714e4023c7
+## 💻 Sobre o Projeto
 
-## How can I edit this code?
+Este é um site moderno, responsivo e rápido (Single Page Application), desenvolvido para oferecer a melhor experiência de navegação tanto em desktops quanto em dispositivos móveis.
 
-There are several ways of editing your application.
+### 🛠️ Tecnologias Utilizadas
 
-**Use Lovable**
+* **[React](https://react.dev/)** - Biblioteca JavaScript para construção de interfaces.
+* **[TypeScript](https://www.typescriptlang.org/)** - Superset do JavaScript com tipagem estática.
+* **[Vite](https://vitejs.dev/)** - Build tool rápida e leve.
+* **[Tailwind CSS](https://tailwindcss.com/)** - Framework de estilização utilitária.
+* **[Shadcn/ui](https://ui.shadcn.com/)** - Componentes de interface reutilizáveis.
+* **Lucide React** - Biblioteca de ícones.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7c8528eb-d52a-4353-978b-46714e4023c7) and start prompting.
+## 🚀 Como Rodar o Projeto
 
-Changes made via Lovable will be committed automatically to this repo.
+Siga os passos abaixo para rodar o site no seu computador:
 
-**Use your preferred IDE**
+### Pré-requisitos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* Node.js instalado (versão 18 ou superior recomendada).
+* Gerenciador de pacotes (npm, yarn ou pnpm).
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Instalação
 
-Follow these steps:
+1.  Clone o repositório:
+    ```sh
+    git clone [https://github.com/dubodi/site-oficial.git](https://github.com/dubodi/site-oficial.git)
+    ```
+2.  Entre na pasta do projeto:
+    ```sh
+    cd site-oficial
+    ```
+3.  Instale as dependências:
+    ```sh
+    npm install
+    # ou
+    yarn
+    ```
+
+### Rodando Localmente
+
+Para iniciar o servidor de desenvolvimento:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7c8528eb-d52a-4353-978b-46714e4023c7) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
