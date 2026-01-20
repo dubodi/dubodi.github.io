@@ -16,7 +16,9 @@ import AreaExterna2 from "../components/assets/fotoCasa/AreaExterna2.png";
 import QuartoTaliba from "../components/assets/fotoCasa/QuartoTaliba.jpeg";
 import Sala from "../components/assets/fotoCasa/Sala (1).jpeg"; 
 import Sala1 from "../components/assets/fotoCasa/Sala (2).jpeg"; 
-import Sala2 from "../components/assets/fotoCasa/Sala (3).jpeg"; 
+import Sala2 from "../components/assets/fotoCasa/Sala (3).jpeg";
+import heroBackground from "../components/assets/logoDouradoDuBodi.jpg";
+
 
 
 import { useState } from "react";
@@ -197,7 +199,22 @@ const Home = () => {
 
       {/* --- 1. HERO SECTION --- */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/10 pt-20">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIzMSwgNzYsIDYwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
+
+        {/* <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIzMSwgNzYsIDYwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div> */}
+
+        {/* Background Image */}
+        {/* <div
+          className="absolute inset-0 -z-30 bg-center bg-cover"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        /> */}
+
+        <div className="absolute inset-0 -z-30 bg-center bg-cover brightness-75" style={{ backgroundImage: `url(${heroBackground})` }} />
+
+        {/* Película / Overlay para legibilidade */}
+        <div className="absolute inset-0 -z-20 bg-black/55" />
+
+        {/* Pattern atual por cima da película (opcional) */}
+        <div className="absolute inset-0 -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDIzMSwgNzYsIDYwLCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] opacity-30" />
 
         {/* Badge de Status */}
         <div className="absolute top-28 right-4 md:right-8 bg-accent text-accent-foreground px-6 py-3 rounded-full shadow-lg font-bold animate-pulse z-20 border border-primary/20">
