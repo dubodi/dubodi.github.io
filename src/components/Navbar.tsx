@@ -9,7 +9,7 @@ export const Navbar = () => {
 
   // Lista de seções correspondentes aos IDs na sua Home.tsx
   const navLinks = [
-    { id: "home", label: "Início" },
+    { id: "home", label: "fael" },
     { id: "about", label: "A Casa" },
     { id: "gallery", label: "Galeria" },
     { id: "residents", label: "Moradores" },
