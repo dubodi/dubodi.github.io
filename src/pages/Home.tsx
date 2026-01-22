@@ -17,6 +17,10 @@ import QuartoTaliba from "../components/assets/fotoCasa/QuartoTaliba.jpeg";
 import Sala from "../components/assets/fotoCasa/Sala (1).jpeg"; 
 import Sala1 from "../components/assets/fotoCasa/Sala (2).jpeg"; 
 import Sala2 from "../components/assets/fotoCasa/Sala (3).jpeg";
+//import Lanhouse from "../components/assets/fotoCasa/";
+import Banheiro from "../components/assets/fotoCasa/Banheiro.jpeg";
+import Banheiro2 from "../components/assets/fotoCasa/Banheiro2.jpeg";
+//import Lavabo from "../components/assets/fotoCasa/";
 import heroBackground from "../components/assets/logoDouradoDuBodi.jpg";
 
 
@@ -101,10 +105,14 @@ const galleryImages = [
   { id: 11, url: "", alt: "Banheiro Suite 2" },
   { id: 12, url: Quartofalazada, alt: "Quarto 1" },
   { id: 13, url: Quartocasado, alt: "Quarto 2" },
-  { id: 14, url: "", alt: "Fachada" },
-  { id: 15, url: Lavanderia, alt: "Lavanderia" },
-  { id: 16, url: AreaExterna, alt: "Área de externa" },
-  { id: 17, url: AreaExterna2, alt: "Área de externa 2" },
+  { id: 14, url: "", alt: "Lanhouse" },
+  { id: 15, url: Banheiro, alt: "Banheiro" },
+  { id: 16, url: Banheiro2, alt: "Banheiro" },
+  { id: 17, url: "", alt: "Lavabo" },
+  { id: 18, url: "", alt: "Fachada" },
+  { id: 19, url: Lavanderia, alt: "Lavanderia" },
+  { id: 20, url: AreaExterna, alt: "Área de externa" },
+  { id: 21, url: AreaExterna2, alt: "Área de externa 2" },
 ];
 
 // Dados dos Moradores
