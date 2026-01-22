@@ -312,12 +312,11 @@ const Home = () => {
             <div className="bg-card p-8 md:p-12 rounded-2xl shadow-lg border-2 border-border/50">
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Fundada em 18 de março de 2010, a República DuBodi nasceu da iniciativa de quatro estudantes visionários, inicialmente, o objetivo era acolher alunos que faziam parte da Ordem DeMolay, mas, com o passar dos anos, nossos horizontes se expandiram. Esse critério foi deixado de lado para acolher diversos alunos, prezando pela diversidade e pela integração.
+                  Fundada em 18 de março de 2010, a República DuBodi nasceu da iniciativa de quatro estudantes visionários. Inicialmente, o objetivo era acolher alunos que faziam parte da Ordem DeMolay, mas, com o passar dos anos, nossos horizontes se expandiram. Esse critério foi deixado de lado para acolher diversos alunos, prezando pela diversidade e pela integração.
 
-                  Ao longo de mais de uma década, construímos um legado de companheirismo, união, parceria e respeito. Para nós, viver em república vai muito além de dividir um teto; trata-se de pensar no coletivo, criar vínculos verdadeiros e interagir com todos da casa e com outras repúblicas .
+Ao longo de mais de uma década, construímos um legado de companheirismo, união, parceria e respeito. Para nós, viver em república vai muito além de dividir um teto, trata-se de pensar no coletivo, criar vínculos verdadeiros e interagir com todos da casa e com outras repúblicas.
 
-
-                  O nome e o símbolo do "Bode" representam a nossa identidade, marcada pela persistência e pelo compromisso com a república. Aqui, repudiamos o individualismo e a falta de responsabilidade , buscando sempre desenvolver a parte social e acadêmica de cada morador, fazendo a DuBodi alcançar novos lugares.
+O nome e o símbolo do 'Bode' representam a nossa identidade, marcada pela persistência e pelo compromisso com a república. Aqui, repudiamos o individualismo e a falta de responsabilidade, buscando sempre desenvolver a parte social e acadêmica de cada morador, fazendo a DuBodi alcançar novos lugares.
                 </p>
 
                 {/* Ícones de Valores */}
