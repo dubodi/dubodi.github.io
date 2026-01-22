@@ -2,7 +2,7 @@ import doryFoto from "../components/assets/Dory.png";
 import casadoFoto from "../components/assets/Casado.jpeg";
 import talibaFoto from "../components/assets/Taliba.png";
 import falazadaFoto from "../components/assets/Falazada.png";
-import choraoFoto from "../components/assets/Chorao.jpeg";
+import choraoFoto from "../components/assets/Fotochoraovet (1).svg";
 import QuartoDory from "../components/assets/fotoCasa/QuartoDory (1).jpeg";
 import QuartoDory1 from "../components/assets/fotoCasa/QuartoDory (2).jpeg";
 import QuartoDory3 from "../components/assets/fotoCasa/QuartoDory (3).jpeg";
