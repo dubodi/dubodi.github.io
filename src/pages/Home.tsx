@@ -17,11 +17,14 @@ import QuartoTaliba from "../components/assets/fotoCasa/QuartoTaliba.jpeg";
 import Sala from "../components/assets/fotoCasa/Sala (1).jpeg"; 
 import Sala1 from "../components/assets/fotoCasa/Sala (2).jpeg"; 
 import Sala2 from "../components/assets/fotoCasa/Sala (3).jpeg";
-//import Lanhouse from "../components/assets/fotoCasa/";
 import Banheiro from "../components/assets/fotoCasa/Banheiro.jpeg";
 import Banheiro2 from "../components/assets/fotoCasa/Banheiro2.jpeg";
-//import Lavabo from "../components/assets/fotoCasa/";
+import Lavabo from "../components/assets/fotoCasa/Lavabo.jpeg";
 import heroBackground from "../components/assets/logoDouradoDuBodi.jpg";
+import Fachada from "../components/assets/fotoCasa/Fachada.jpeg";
+import Cozinha from "../components/assets/fotoCasa/Cozinha 1.jpeg";
+import Cozinha1 from "../components/assets/fotoCasa/Cozinha 2.jpeg";
+import Cozinha2 from "../components/assets/fotoCasa/Cozinha 3.jpeg";
 
 
 
@@ -95,24 +98,26 @@ const galleryImages = [
   { id: 1, url: Sala, alt: "Sala de estar" },
   { id: 2, url: Sala1, alt: "Sala de estar" },
   { id: 3, url: Sala2, alt: "Sala de estar" },
-  { id: 4, url: "", alt: "Cozinha" },
-  { id: 5, url: QuartoDory, alt: "Suite 1" },
-  { id: 6, url: QuartoDory1, alt: "Suite 1" },
-  { id: 7, url: QuartoDory3, alt: "Suite 1" },
-  { id: 8, url: BanheiroDory, alt: "Banheiro Suite 1" },
-  { id: 9, url: BanheiroDory2, alt: "Banheiro Suite 1" },
-  { id: 10, url: QuartoTaliba, alt: "Suite 2" },
-  { id: 11, url: "", alt: "Banheiro Suite 2" },
-  { id: 12, url: Quartofalazada, alt: "Quarto 1" },
-  { id: 13, url: Quartocasado, alt: "Quarto 2" },
-  { id: 14, url: "", alt: "Lanhouse" },
-  { id: 15, url: Banheiro, alt: "Banheiro" },
-  { id: 16, url: Banheiro2, alt: "Banheiro" },
-  { id: 17, url: "", alt: "Lavabo" },
-  { id: 18, url: "", alt: "Fachada" },
-  { id: 19, url: Lavanderia, alt: "Lavanderia" },
-  { id: 20, url: AreaExterna, alt: "Área de externa" },
-  { id: 21, url: AreaExterna2, alt: "Área de externa 2" },
+  { id: 4, url: Cozinha, alt: "Cozinha" },
+  { id: 5, url: Cozinha1, alt: "Cozinha" },
+  { id: 6, url: Cozinha2, alt: "Cozinha" },
+  { id: 7, url: QuartoDory, alt: "Suite 1" },
+  { id: 8, url: QuartoDory1, alt: "Suite 1" },
+  { id: 9, url: QuartoDory3, alt: "Suite 1" },
+  { id: 10, url: BanheiroDory, alt: "Banheiro Suite 1" },
+  { id: 11, url: BanheiroDory2, alt: "Banheiro Suite 1" },
+  { id: 12, url: QuartoTaliba, alt: "Suite 2" },
+  //{ id: 13, url: "", alt: "Banheiro Suite 2" },
+  { id: 14, url: Quartofalazada, alt: "Quarto 1" },
+  { id: 15, url: Quartocasado, alt: "Quarto 2" },
+  //{ id: 16, url: "", alt: "Lanhouse" },
+  { id: 17, url: Banheiro, alt: "Banheiro" },
+  { id: 18, url: Banheiro2, alt: "Banheiro" },
+  { id: 19, url: Lavabo, alt: "Lavabo" },
+  { id: 20, url: Fachada, alt: "Fachada" },
+  { id: 21, url: Lavanderia, alt: "Lavanderia" },
+  { id: 22, url: AreaExterna, alt: "Área de externa" },
+  { id: 23, url: AreaExterna2, alt: "Área de externa 2" },
 ];
 
 // Dados dos Moradores
